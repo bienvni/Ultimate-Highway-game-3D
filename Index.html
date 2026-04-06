@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ultimate Highway Racer 3D</title>
+  <style>body { margin: 0; overflow: hidden; font-family: 'Arial Black', sans-serif; background: #000; touch-action: none; }
+        #hud { position: absolute; top: 15px; width: 100%; display: flex; justify-content: space-around; pointer-events: none; z-index: 10; color: white; text-shadow: 2px 2px #000; }
+        .stat { background: rgba(0,0,0,0.6); padding: 10px 20px; border-radius: 15px; border: 1px solid gold; }
+        
+        #joystick-zone { position: absolute; bottom: 40px; left: 40px; width: 100px; height: 100px; border: 3px solid rgba(255,255,255,0.3); border-radius: 50%; background: rgba(255,255,255,0.1); }
+        #joystick-handle { position: absolute; top: 50%; left: 50%; width: 50px; height: 50px; background: white; border-radius: 50%; transform: translate(-50%, -50%); box-shadow: 0 0 15px rgba(255,255,255,0.5); }
+
+        .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.9); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 100; color: white; text-align: center; }
+        .btn { padding: 15px 40px; background: #ffcc00; border: none; border-radius: 30px; font-weight: bold; cursor: pointer; font-size: 20px; margin-top: 20px; box-shadow: 0 5px #b89500; }</style>
+</head>
+<body>
+
+<div id="hud">
+    <div class="stat">💰 PIÈCES: <span id="coinCount">0</span></div>
+    <div id="level-info" style="color: #ffcc00;">NIVEAU 1</div>
+    <div class="stat">🏆 SCORE: <span id="scoreVal">0</span></div>
+</div>
+
+<div id="joystick-zone"><div id="joystick-handle"></div></div>
+
+<div id="menu-start" class="overlay">
+    <h1 style="font-size: 40px; color: #ffcc00;">ULTIMATE RACER</h1>
+    <p>Évitez les voitures et ramassez les bonus !</p>
+    <button class="btn" onclick="startGame()">DÉMARRER</button>
+</div>
+
+<div id="game-over" class="overlay" style="display: none;">
+    <h1 style="color: #ff3333; font-size: 50px;">GAME OVER</h1>
+    <p>Score final : <span id="finalScore">0</span></p>
+    <button class="btn" onclick="location.reload()">RECOMMENCER</button>
+</div>
+
+<script type="module">script.js</script>
+</body>
+</html>
